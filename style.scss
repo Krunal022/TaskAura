@@ -31,6 +31,11 @@ body {
   background-color: var(--pri);
 }
 
+html::selection {
+  color: black;
+  background-color: rgb(22, 194, 142);
+}
+
 main {
   width: 100%;
   background-color: var(--pri);
@@ -121,7 +126,7 @@ main {
 
   // FULL TODO - PAGE
   .todo-fullPage {
-    display: block;
+    // display: block;
 
     h1 {
       color: var(--sec1);
@@ -144,11 +149,19 @@ main {
         height: 100%;
         width: 37%;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: flex-start;
         display: flex;
-        gap: 1rem;
         padding: 2rem 1.5rem;
+
+        form {
+          margin-top: 1.5rem;
+          align-items: flex-start;
+          flex-direction: column;
+          display: flex;
+          height: 100%;
+          width: 100%;
+          gap: 1rem;
+        }
 
         h3 {
           color: var(--tri);
@@ -163,6 +176,7 @@ main {
           border: 2px solid var(--tri);
           border-radius: 1rem;
           outline: none;
+          text-transform: uppercase;
           padding: 1rem;
           font-family: aeonik;
           font-size: 1.5rem;
@@ -245,9 +259,30 @@ main {
             h1 {
               color: var(--pri);
               font-size: 1.5rem;
+              gap: 0.25rem;
+              justify-content: flex-start;
+              align-items: flex-start;
+              display: flex;
+
+              span {
+                align-items: flex-start;
+                border-radius: 1rem;
+                padding: 0.2rem 0.5rem;
+                font-size: 0.47rem;
+                background-color: rgba(255, 0, 0, 0.776);
+                color: var(--sec1);
+
+                &.true {
+                  opacity: 1;
+                }
+                &.false {
+                  opacity: 0;
+                }
+              }
             }
             h3 {
               font-weight: 100;
+              margin-top: 0.5rem;
               color: var(--pri2);
               font-size: 1.3rem;
             }
@@ -259,9 +294,7 @@ main {
             padding: 0.5rem 0.7rem;
             border: 1px solid var(--tri);
             color: var(--pri);
-                  background: linear-gradient(90deg, #ff0404, #e38787);
-
-            // background-color: red;
+            background: linear-gradient(90deg, #0dda33, #cbf7d2);
 
             &:active {
               scale: 0.97;
@@ -271,9 +304,10 @@ main {
       }
     }
   }
+
 }
 
-// FRONT PAGE - cards
+// FRONT PAGE - cards [RESPONSIVE]
 @media (max-width: 550px) {
   main {
     .allElems {
@@ -281,9 +315,7 @@ main {
       align-items: center;
       display: flex;
       padding: 1rem 0.3rem;
-      // flex-wrap: nowrap;
       gap: 0.3rem;
-      // background-color: var(--pri);
 
       .elem {
         gap: 0;
@@ -298,7 +330,7 @@ main {
   }
 }
 
-// FULL TODO PAGE - taskList
+// FULL TODO PAGE - taskList [RESPONSIVE]
 @media (max-width: 550px) {
   main {
     .fullElem {
@@ -324,14 +356,22 @@ main {
           height: 55%;
           width: 100%;
           padding: 1rem 0.77rem;
+
+          form {
+            height: 100%;
+            gap: 0.5rem;
+            margin-top: 0.33rem;
+          }
           h3 {
             font-size: 1.2rem;
           }
           input {
             font-size: 1rem;
-            padding: 0.88rem 0.7rem;
+            padding: 0.58rem 0.7rem;
           }
           textarea {
+            max-height: 120px;
+            height: 100px;
             padding: 0.88rem 0.7rem;
             font-size: 0.88rem;
           }
@@ -344,7 +384,6 @@ main {
             }
             .check {
               font-size: 1rem;
-              margin-top: 0;
             }
           }
 
@@ -357,29 +396,30 @@ main {
         .allTask {
           height: 100%;
           width: 100%;
-          gap: .3rem;
+          gap: 0.3rem;
           display: flex;
           // overflow: hidden;
 
-          .task{
+          .task {
             flex-direction: column;
-            padding: .77rem .5rem ;
+            padding: 0.77rem 0.5rem;
             // min-height: fit-content;
             aspect-ratio: 19/2;
             width: 300px;
             border: 1.2px solid var(--tri);
 
-            .task-data{
-               h1{
+            .task-data {
+              h1 {
                 font-size: 1.37rem;
-               }
-               h3{
-                font-size: .87rem;
-               }
+              }
+              h3 {
+                font-size: 0.87rem;
+                margin-top: 1rem;
+              }
             }
-            .btn button{
+            .btn button {
               color: var(--pri);
-              margin-top: .5rem;
+              margin-top: 0.5rem;
             }
           }
         }
