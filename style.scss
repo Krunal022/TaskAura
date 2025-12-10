@@ -319,8 +319,8 @@ main {
 
       .elem {
         gap: 0;
-        width: 170px;
-        height: 200px;
+        width: 47vw;
+        height: 32vh;
 
         h1 {
           font-size: 0.87rem;
@@ -336,6 +336,8 @@ main {
     .fullElem {
       .back {
         padding: 0.48rem 0.92rem;
+        right: 3%;
+        top: 2%;
         font-size: 0.78rem;
       }
     }
@@ -394,7 +396,7 @@ main {
         }
 
         .allTask {
-          height: 100%;
+          height: 45%;
           width: 100%;
           gap: 0.3rem;
           display: flex;
@@ -403,14 +405,20 @@ main {
           .task {
             flex-direction: column;
             padding: 0.77rem 0.5rem;
+            min-height: 70%;
+            overflow-y: auto;
+            overflow-x: hidden;
             // min-height: fit-content;
-            aspect-ratio: 19/2;
-            width: 300px;
+            // aspect-ratio: 1/1;
+            // min-height: 50px;
+            flex-shrink: 0;
+            width: 220px;
             border: 1.2px solid var(--tri);
 
             .task-data {
               h1 {
                 font-size: 1.37rem;
+                text-wrap: nowrap;
               }
               h3 {
                 font-size: 0.87rem;

@@ -285,8 +285,8 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
   }
   main .allElems .elem {
     gap: 0;
-    width: 170px;
-    height: 200px;
+    width: 47vw;
+    height: 32vh;
   }
   main .allElems .elem h1 {
     font-size: 0.87rem;
@@ -295,6 +295,8 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
 @media (max-width: 550px) {
   main .fullElem .back {
     padding: 0.48rem 0.92rem;
+    right: 3%;
+    top: 2%;
     font-size: 0.78rem;
   }
   main .todo-fullPage {
@@ -348,7 +350,7 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
     padding: 0.5rem 0;
   }
   main .todo-fullPage .todo-container .allTask {
-    height: 100%;
+    height: 45%;
     width: 100%;
     gap: 0.3rem;
     display: flex;
@@ -356,12 +358,16 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
   main .todo-fullPage .todo-container .allTask .task {
     flex-direction: column;
     padding: 0.77rem 0.5rem;
-    aspect-ratio: 19/2;
-    width: 300px;
+    min-height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+    width: 220px;
     border: 1.2px solid var(--tri);
   }
   main .todo-fullPage .todo-container .allTask .task .task-data h1 {
     font-size: 1.37rem;
+    text-wrap: nowrap;
   }
   main .todo-fullPage .todo-container .allTask .task .task-data h3 {
     font-size: 0.87rem;
