@@ -1,8 +1,17 @@
 let allElems = document.querySelectorAll('.elem')
-let allFullElems = document.querySelectorAll(".fullElem")
+let fullElemPage = document.querySelectorAll(".fullElem")
+let fullElemPagebackbtn = document.querySelectorAll('.back')
 
-allElems.forEach(function(elem){
-    elem.addEventListener('click',()=>{
-        allFullElems[elem.id].style.display = "block"
+// Opening the fullPage
+allElems.forEach(function (elem) {
+    elem.addEventListener('click', () => {
+        fullElemPage[elem.id].style.display = "block"
+    })
+})
+
+// Closing the fullPage
+fullElemPagebackbtn.forEach(function (back) {
+    back.addEventListener('click', () => {
+        fullElemPage[back.id].style.display = "none"
     })
 })

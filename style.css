@@ -27,6 +27,7 @@ body {
   font-family: bw;
   width: 100%;
   height: 100%;
+  background-color: var(--pri);
 }
 
 main {
@@ -50,7 +51,7 @@ main .allElems .elem {
   overflow: hidden;
   position: relative;
   transition: cubic-bezier(0.19, 1, 0.22, 1);
-  border: 0.1px solid var(--sec);
+  border: 0.1px solid #d5d5d5;
   cursor: pointer;
 }
 main .allElems .elem h1 {
@@ -83,14 +84,44 @@ main .fullElem {
   width: 100%;
 }
 main .fullElem h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: var(--sec);
+}
+main .fullElem .back {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: aeonik;
+  background: linear-gradient(90deg, #ff0404, #d5d5d5);
+  color: #040d12;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0.58rem 2rem;
+  border-radius: 9999px;
+  top: 5%;
+  right: 5%;
+  position: absolute;
+  z-index: 9999999;
+  transition: all 0.5s ease;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+main .fullElem .back:active {
+  scale: 0.7;
 }
 
 @media (max-width: 550px) {
-  .allElems {
+  main .allElems {
     justify-content: center;
     align-items: center;
     display: flex;
+    padding: 1rem 0.3rem;
+    gap: 0.3rem;
+  }
+  main .allElems .elem {
+    gap: 0;
+    width: 170px;
+    height: 200px;
+  }
+  main .allElems .elem h1 {
+    font-size: 0.87rem;
   }
 }
