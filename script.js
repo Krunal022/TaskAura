@@ -28,26 +28,8 @@ function todoFeature() {
         console.log("There is no Task List!")
     }
 
-    let form = document.querySelector('.todo-form form')
-    let headingInp = document.querySelector('form input')
-    let detailInp = document.querySelector('form textarea')
-    let checkbox = document.querySelector('form .imp-check #check')
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault()
-        console.log(currentTask)
-        currentTask.push({
-            heading: headingInp.value,
-            detail: detailInp.value,
-            imp: checkbox.checked
-        })
-        renderTask()
-
-        location.reload()
-    })
-
-
     function renderTask() {
+
         let allTask = document.querySelector('.todo-container .allTask')
         let sum = ''
 
@@ -65,19 +47,40 @@ function todoFeature() {
         allTask.innerHTML = sum
 
         localStorage.setItem("currentTask", JSON.stringify(currentTask))
+
+        // Delete perticular data
+        let marksCompletedBtn = document.querySelectorAll('.task .btn button')
+
+        marksCompletedBtn.forEach(function (btn) {
+            btn.addEventListener("click", () => {
+                currentTask.splice(btn.id, 1)
+                renderTask();
+            })
+        })
+
     }
     renderTask()
 
+    let form = document.querySelector('.todo-form form')
+    let headingInp = document.querySelector('form input')
+    let detailInp = document.querySelector('form textarea')
+    let checkbox = document.querySelector('form .imp-check #check')
 
-    // Delete perticular data
-    let marksCompletedBtn = document.querySelectorAll('.task .btn button')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
 
-    marksCompletedBtn.forEach(function (btn) {
-        btn.addEventListener("click", () => {
-            currentTask.splice(btn.id, 1)
-            renderTask();
-            location.reload()
+        // console.log(currentTask)
+
+        currentTask.push({
+            heading: headingInp.value,
+            detail: detailInp.value,
+            imp: checkbox.checked
         })
+        renderTask()
+
+        headingInp.value = ""
+        detailInp.value = ""
+        checkbox.checked = ""
     })
 }
 todoFeature()
