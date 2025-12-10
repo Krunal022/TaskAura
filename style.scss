@@ -152,8 +152,11 @@ main {
         align-items: flex-start;
         display: flex;
         padding: 2rem 1.5rem;
+        overflow: hidden;
+        position: relative;
 
         form {
+          z-index: 2;
           margin-top: 1.5rem;
           align-items: flex-start;
           flex-direction: column;
@@ -161,6 +164,15 @@ main {
           height: 100%;
           width: 100%;
           gap: 1rem;
+        }
+              
+        img{
+          z-index: 1;
+          position: absolute;
+          height: 300px;
+          right: -2%;
+          rotate: 180deg;
+          bottom: -15%;
         }
 
         h3 {
@@ -176,7 +188,7 @@ main {
           border: 2px solid var(--tri);
           border-radius: 1rem;
           outline: none;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           padding: 1rem;
           font-family: aeonik;
           font-size: 1.5rem;
@@ -355,9 +367,13 @@ main {
         gap: 1rem;
 
         .todo-form {
-          height: 55%;
+          height: 65%;
           width: 100%;
           padding: 1rem 0.77rem;
+
+          img{
+            height: 220px;
+          }
 
           form {
             height: 100%;
@@ -396,7 +412,7 @@ main {
         }
 
         .allTask {
-          height: 45%;
+          height: 35%;
           width: 100%;
           gap: 0.3rem;
           display: flex;
@@ -405,7 +421,7 @@ main {
           .task {
             flex-direction: column;
             padding: 0.77rem 0.5rem;
-            min-height: 70%;
+            min-height: 100%;
             overflow-y: auto;
             overflow-x: hidden;
             // min-height: fit-content;
