@@ -32,12 +32,15 @@ body {
 main {
   width: 100%;
   background-color: var(--pri);
-  padding: 2rem 2rem;
   min-height: 100%;
 }
 main .allElems {
+  padding: 2rem 2rem;
   gap: 1rem;
+  height: 100vh;
+  width: 100%;
   display: flex;
+  position: absolute;
   flex-wrap: wrap;
 }
 main .allElems .elem {
@@ -70,6 +73,18 @@ main .allElems .elem img {
 }
 main .allElems .elem:active {
   scale: 0.98;
+}
+main .fullElem {
+  display: none;
+  position: absolute;
+  background-color: var(--pri);
+  height: 100vh;
+  padding: 2rem 2rem;
+  width: 100%;
+}
+main .fullElem h1 {
+  font-size: 3rem;
+  color: var(--sec);
 }
 
 @media (max-width: 550px) {
