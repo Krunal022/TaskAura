@@ -85,6 +85,36 @@ function todoFeature() {
 }
 todoFeature()
 
+function dailyPlanner() {
+    let dailyPlannerContainer = document.querySelector(".daily-planner-container")
+    let insertedData = JSON.parse(localStorage.getItem("dailyPlannerData")) || {}
 
+    var hoursOfDay = Array.from({ length: 18 }, (elem, idx) => {
+        return `${6 + idx}:00-${7 + idx}:00`
+    })
 
+    let insertHours = ''
+
+    hoursOfDay.forEach((hour, idx) => {
+        let savedData = insertedData[idx] || '';
+
+        insertHours = insertHours + `<div class="daily-planner-hour">
+                    <p>${hour}</p>
+                    <input id="${idx}" type="" placeholder=". . ." value= "${savedData}" >
+                </div>`
+    })
+
+    dailyPlannerContainer.innerHTML = insertHours
+
+    let dayInput = document.querySelectorAll('.daily-planner-hour input')
+
+    dayInput.forEach((elem) => {
+        elem.addEventListener("input", () => {
+            insertedData[elem.id] = elem.value
+
+            localStorage.setItem("dailyPlannerData", JSON.stringify(insertedData))
+        })
+    })
+}
+dailyPlanner()
 

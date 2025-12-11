@@ -284,9 +284,6 @@ main .todo-fullPage .todo-container .allTask .task .btn button {
 main .todo-fullPage .todo-container .allTask .task .btn button:active {
   scale: 0.97;
 }
-main .daily-fullPage {
-  display: block;
-}
 main .daily-fullPage h1 {
   color: var(--sec1);
   font-size: 2.2rem;
