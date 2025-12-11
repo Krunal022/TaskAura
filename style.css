@@ -284,6 +284,53 @@ main .todo-fullPage .todo-container .allTask .task .btn button {
 main .todo-fullPage .todo-container .allTask .task .btn button:active {
   scale: 0.97;
 }
+main .daily-fullPage {
+  display: block;
+}
+main .daily-fullPage h1 {
+  color: var(--sec1);
+  font-size: 2.2rem;
+}
+main .daily-fullPage .daily-planner-container {
+  border-radius: 1.2rem;
+  margin-top: 1.2rem;
+  background-color: var(--tri1);
+  height: 90%;
+  padding: 1rem 1rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid var(--sec1);
+  flex-wrap: wrap;
+  display: flex;
+}
+main .daily-fullPage .daily-planner-container .daily-planner-hour {
+  height: 8%;
+  width: 49%;
+  position: relative;
+}
+main .daily-fullPage .daily-planner-container .daily-planner-hour p {
+  left: 2%;
+  color: var(--sec);
+  font-size: 0.799rem;
+  font-weight: 400;
+  top: 9%;
+  position: absolute;
+}
+main .daily-fullPage .daily-planner-container .daily-planner-hour input {
+  border: 1px solid var(--pri);
+  background-color: var(--tri);
+  border-radius: 0.7rem;
+  outline: none;
+  letter-spacing: 0.88px;
+  font-family: aeonik;
+  font-weight: 500;
+  color: var(--sec1);
+  text-transform: uppercase;
+  padding: 1.5rem 0.7rem 0.77rem 2rem;
+  height: 100%;
+  width: 100%;
+}
 
 @media (max-width: 550px) {
   main .allElems {
@@ -323,7 +370,7 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
     gap: 1rem;
   }
   main .todo-fullPage .todo-container .todo-form {
-    height: 65%;
+    height: 55%;
     width: 100%;
     padding: 1rem 0.77rem;
   }
@@ -363,7 +410,7 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
     padding: 0.5rem 0;
   }
   main .todo-fullPage .todo-container .allTask {
-    height: 35%;
+    height: 40%;
     width: 100%;
     gap: 0.3rem;
     display: flex;
@@ -389,5 +436,26 @@ main .todo-fullPage .todo-container .allTask .task .btn button:active {
   main .todo-fullPage .todo-container .allTask .task .btn button {
     color: var(--pri);
     margin-top: 0.5rem;
+  }
+}
+@media (max-width: 550px) {
+  main .daily-fullPage {
+    padding: 1rem;
+  }
+  main .daily-fullPage h1 {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+  main .daily-fullPage .daily-planner-container {
+    overflow: auto;
+    gap: 0.3rem;
+  }
+  main .daily-fullPage .daily-planner-container .daily-planner-hour {
+    width: 100%;
+  }
+  main .daily-fullPage .daily-planner-container .daily-planner-hour p {
+    font-size: 0.67rem;
+    left: 5%;
+    top: 10%;
   }
 }
