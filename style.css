@@ -13,6 +13,8 @@
   --sec1: #fed8b1;
   --tri: #183d3d;
   --tri1: #5c8374;
+  --green: #a7d477;
+  --red: #ed2b2a;
 }
 
 * {
@@ -328,6 +330,75 @@ main .daily-fullPage .daily-planner-container .daily-planner-hour input {
   height: 100%;
   width: 100%;
 }
+main .pomo-fullPage {
+  display: block;
+}
+main .pomo-fullPage h1 {
+  color: var(--sec1);
+  font-size: 2.2rem;
+}
+main .pomo-fullPage .timer-container {
+  margin-top: 1.5rem;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+main .pomo-fullPage .timer-container .cube {
+  --d: 55px; /* control the depth */
+  height: 400px;
+  width: 600px;
+  padding: 20px;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border: solid rgba(0, 0, 0, 0);
+  border-width: var(--d) 0 0 var(--d);
+  clip-path: polygon(100% 100%, var(--d) 100%, 0 calc(100% - var(--d)), 0 0, calc(100% - var(--d)) 0, 100% var(--d));
+  background: conic-gradient(from 90deg at var(--d) var(--d), var(--sec) 25%, var(--tri1) 0 62.5%, var(--tri) 0) border-box #9cc4e4; /* the color */
+}
+main .pomo-fullPage .timer-container .cube .text-container {
+  border: 3px solid var(--pri);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--pri);
+}
+main .pomo-fullPage .timer-container .cube .text-container .lable h2 {
+  border-radius: 0.46rem;
+  padding: 0.3rem 0.77rem;
+  font-size: 0.99rem;
+  color: var(--pri);
+  background-color: var(--green);
+  font-family: bw;
+}
+main .pomo-fullPage .timer-container .cube .text-container .time span {
+  color: var(--sec1);
+  font-weight: 900;
+  font-family: dw;
+  font-size: 11em;
+}
+main .pomo-fullPage .timer-container .cube .text-container .btns {
+  gap: 1rem;
+  display: flex;
+}
+main .pomo-fullPage .timer-container .cube .text-container .btns button {
+  border-radius: 0.3rem;
+  color: var(--sec1);
+  background-color: var(--tri);
+  padding: 0.57rem 0.99rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+main .pomo-fullPage .timer-container .cube .text-container .btns button:active {
+  scale: 0.95;
+}
 
 @media (max-width: 550px) {
   main .allElems {
@@ -454,5 +525,35 @@ main .daily-fullPage .daily-planner-container .daily-planner-hour input {
     font-size: 0.67rem;
     left: 5%;
     top: 10%;
+  }
+}
+@media (max-width: 550px) {
+  main .pomo-fullPage h1 {
+    color: var(--sec1);
+    width: 85%;
+    font-size: 1.7rem;
+  }
+  main .pomo-fullPage .timer-container .cube {
+    --d: 30px;
+    height: 250px;
+  }
+  main .pomo-fullPage .timer-container .cube .text-container .lable h2 {
+    padding: 0.3rem 0.99rem;
+    font-size: 0.84rem;
+  }
+  main .pomo-fullPage .timer-container .cube .text-container .time {
+    line-height: 1.1;
+  }
+  main .pomo-fullPage .timer-container .cube .text-container .time span {
+    font-size: 5em;
+  }
+  main .pomo-fullPage .timer-container .cube .text-container .btns {
+    gap: 0.3rem;
+  }
+  main .pomo-fullPage .timer-container .cube .text-container .btns button {
+    text-wrap: nowrap;
+    font-family: bw;
+    font-size: 0.88rem;
+    padding: 0.2rem 0.58rem;
   }
 }

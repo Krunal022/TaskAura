@@ -14,6 +14,8 @@
   --sec1: #fed8b1;
   --tri: #183d3d;
   --tri1: #5c8374;
+  --green: #a7d477;
+  --red: #ed2b2a;
 }
 
 * {
@@ -370,6 +372,101 @@ main {
       }
     }
   }
+
+  .pomo-fullPage {
+    display: block;
+    h1 {
+      color: var(--sec1);
+      font-size: 2.2rem;
+    }
+
+    .timer-container {
+      margin-top: 1.5rem;
+      height: 80%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+      .cube {
+        --d: 55px; /* control the depth */
+        height: 400px;
+        width: 600px;
+        padding: 20px;
+        aspect-ratio: 1;
+        box-sizing: border-box;
+        border: solid #0000;
+        border-width: var(--d) 0 0 var(--d);
+        clip-path: polygon(
+          100% 100%,
+          var(--d) 100%,
+          0 calc(100% - var(--d)),
+          0 0,
+          calc(100% - var(--d)) 0,
+          100% var(--d)
+        );
+
+        background: conic-gradient(
+            from 90deg at var(--d) var(--d),
+            var(--sec) 25%,
+            var(--tri1) 0 62.5%,
+            var(--tri) 0
+          )
+          border-box #9cc4e4; /* the color */
+
+        .text-container {
+          border: 3px solid var(--pri);
+          border-radius: 5px;
+          height: 100%;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          background-color: var(--pri);
+
+          .lable {
+            h2 {
+              border-radius: 0.46rem;
+              padding: 0.3rem 0.77rem;
+              font-size: 0.99rem;
+              color: var(--pri);
+              background-color: var(--green);
+              font-family: bw;
+            }
+          }
+
+          .time {
+            // height: fit-content;
+            span {
+              color: var(--sec1);
+              font-weight: 900;
+              font-family: dw;
+              font-size: 11em;
+            }
+          }
+          .btns {
+            gap: 1rem;
+            display: flex;
+            button {
+              border-radius: 0.3rem;
+              color: var(--sec1);
+              background-color: var(--tri);
+              padding: 0.57rem 0.99rem;
+              font-size: 1.2rem;
+              border: none;
+              cursor: pointer;
+
+              &:active {
+                scale: 0.95;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // FRONT PAGE - cards [RESPONSIVE]
@@ -527,6 +624,50 @@ main {
             font-size: 0.67rem;
             left: 5%;
             top: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FULLL POMODORO TIMER - [RESPONSIVE]
+@media (max-width: 550px) {
+  main {
+    .pomo-fullPage {
+      h1 {
+        color: var(--sec1);
+        width: 85%;
+        font-size: 1.7rem;
+      }
+
+      .timer-container {
+
+        .cube {
+          --d: 30px;
+          height: 250px;
+          .text-container {
+            .lable {
+              h2 {
+                padding: 0.3rem 0.99rem;
+                font-size: 0.84rem;
+              }
+            }
+            .time {
+              line-height: 1.1;
+              span {
+                font-size: 5em;
+              }
+            }
+            .btns {
+              gap: .3rem;
+              button {
+                text-wrap: nowrap;
+                font-family: bw;
+                font-size: .88rem;
+                padding: 0.2rem 0.58rem;
+              }
+            }
           }
         }
       }
