@@ -373,8 +373,33 @@ main {
     }
   }
 
-  .pomo-fullPage {
+  //FULL MOTIVATIONAL-QUOTES PAGE
+  .moti-fullPage {
     display: block;
+
+    h1 {
+      color: var(--sec1);
+      font-size: 2.2rem;
+    }
+    .quote-container {
+      margin-top: 2rem;
+      // background-color: red;
+      height: 85%;
+      width: 100%;
+
+      img{
+        opacity: .5 ;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  // FULL POMODORO-TIMER PAGE
+  .pomo-fullPage {
+    // display: block;
     h1 {
       color: var(--sec1);
       font-size: 2.2rem;
@@ -642,7 +667,6 @@ main {
       }
 
       .timer-container {
-
         .cube {
           --d: 30px;
           height: 250px;
@@ -660,11 +684,11 @@ main {
               }
             }
             .btns {
-              gap: .3rem;
+              gap: 0.3rem;
               button {
                 text-wrap: nowrap;
                 font-family: bw;
-                font-size: .88rem;
+                font-size: 0.88rem;
                 padding: 0.2rem 0.58rem;
               }
             }
